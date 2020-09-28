@@ -1,5 +1,20 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<style>
+    .col-md-8, .col-md-4 {
+    margin-top: 20px;
+}
+    article.media.content-section, .content-section {
+    border-radius: 20px;
+    box-shadow: -7px -7px 14px #00000060;
+}
+h1{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-shadow: -3px -3px 6px #00000060;
+}
+</style>
+<h1>Confirm Delete?</h1>
         <div class="content-section">
             <form method="POST">
                 {% csrf_token %}

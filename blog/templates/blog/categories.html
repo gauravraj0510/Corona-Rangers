@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in category_posts %}
+                <article class="media content-section">
+                <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+                <div class="media-body">
+                    <div class="article-metadata">
+                    <a class="mr-2" href="{% url 'profile-view' post.author.profile.id %}">{{ post.author }}</a>
+                    <a class="mr-2" href="{% url 'category' post.category %}">-{{ post.category }}</a>
+                    <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                    <p class="article-content">{{ post.content }}</p>
+                </div> 
+                </article>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <div class="content-section">
+                <h3>Categories Available</h3>
+                <p class='text-muted'>Requirements you can donate to.
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light"><a href="">Medicines</li></a>
+                    <li class="list-group-item list-group-item-light"><a href="http://127.0.0.1:8000/category/Ventilator/">Ventilator</li></a>
+                    <li class="list-group-item list-group-item-light"><a href="">Food</li></a>
+                    <li class="list-group-item list-group-item-light"><a href="http://127.0.0.1:8000/category/Bed/">Beds</li></a>
+                </ul>
+                </p>
+            </div>
+         </div>
+    </div>      
+{% endblock content%}

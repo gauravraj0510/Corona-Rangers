@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Blog Post</legend>
+
+<div id="div_id_title" class="form-group"> <label for="id_title" class=" requiredField">
+                Title<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="title" class="form-control textinput textInput form-control" maxlength="100" required="" id="id_title"> </div> </div> <div id="div_id_category" class="form-group"> <label for="id_category" class=" requiredField">
+                Category<span class="asteriskField">*</span> </label> <div class=""> <select name="category" class="form-control select form-control" maxlength="100" id="id_category"> <option value="Ventilator">Ventilator</option> <option value="Bed">Bed</option> <option value="Medicine">Medicine</option> <option value="Food">Food</option>
+
+</select> </div> </div> <div id="div_id_content" class="form-group"> <label for="id_content" class=" requiredField">
+                Content<span class="asteriskField">*</span> </label> <div class=""> <textarea name="content" cols="40" rows="10" class="form-control textarea form-control" required="" id="speechToText" placeholder="Speak Something" onclick="record()"></textarea> </div> </div>
+
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+{% endblock content%}
+

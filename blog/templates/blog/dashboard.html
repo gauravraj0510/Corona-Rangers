@@ -15,14 +15,13 @@
 <div class="row d-flex justify-content-center">
 <div class="col-9">
 <h1 class='my-4' style="text-align: center;">My Dashboard</h1>
-    <legend class="border-bottom mb-4">NGOs you have donated</legend>
+    <legend class="border-bottom mb-4">My donations to NGOs</legend>
     <table class="table">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Receiver</th>
             <th scope="col">Category</th>
             <th scope="col">Date</th>
-            <th scope="col">Sender</th>
             <th scope="col">Quantity</th>
           </tr>
         </thead>
@@ -32,41 +31,41 @@
             <th scope="row">{{ donation.receiver }}</th>
             <td>{{ donation.category }}</td>
             <td>{{ donation.date|date:"F d, Y" }}</td>
-            <td>{{ donation.donor }}</td>
             <td>{{ donation.quantity }}</td>
           </tr>
         {% endfor %}  
         </tbody>
       </table>
-    </div>
-
-    <legend class="border-bottom mb-4">Donations you have recieved</legend>
+    {% if user.profile.ngo == True %}
+    <legend class="border-bottom mb-4">Donations recieved from following NGOs</legend>
     <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">Receiver</th>
+            <th scope="col">Sender</th>
             <th scope="col">Category</th>
             <th scope="col">Date</th>
-            <th scope="col">Sender</th>
             <th scope="col">Quantity</th>
           </tr>
         </thead>
         <tbody>
         {% for donation in recieved %}
           <tr>
-            <th scope="row">{{ donation.receiver }}</th>
+            <th scope="row">{{ donation.donor }}</th>
             <td>{{ donation.category }}</td>
             <td>{{ donation.date|date:"F d, Y" }}</td>
-            <td>{{ donation.donor }}</td>
             <td>{{ donation.quantity }}</td>
           </tr>
         {% endfor %}  
         </tbody>
       </table>
+      {% endif %}
     </div>
 
     <div class="col-3">
-        <img style="width: 20vw; height: 60vh; padding-top: 15vh;" src="../../../media/donate.png"/>
+      <img style="width: 20vw; height: 60vh; padding-top: 15vh;" src="../../../media/donate.png"/>
+      <img style="width: 20vw; height: 60vh; padding-top: 15vh;" src="../../../media/help.png"/>
     </div>
+    
 </div>
 {% endblock content%}
+

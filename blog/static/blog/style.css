@@ -60,6 +60,7 @@ p {
 .dark-bg {
   background: #252a33; }
 
+
 /* ==============================================================
    HEADER
    ============================================================== */
@@ -320,7 +321,8 @@ p {
     text-decoration: none;
     color: #000; }
   .featured-place-wrap img {
-    width: 100%; }
+    width: 100%;
+  }
 
 .featured-rating,
 .featured-rating-orange,

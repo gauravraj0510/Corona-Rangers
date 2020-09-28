@@ -1,6 +1,17 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<style>
+    article.media.content-section {
+    box-shadow: -7px -7px 14px #00000060;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+h1{
+    margin-top: 100px;
+}
+</style>
+<h1>Donation Requests</h1>
     <article class="media content-section">
         <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
         <div class="media-body">

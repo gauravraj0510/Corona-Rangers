@@ -3,7 +3,9 @@
 <html>
     <head>
         <!-- Required meta tags -->
-        
+        <link rel="icon" 
+      type="image/png" 
+      href="../../../media/favicon.png">
 
     <script
       type="text/javascript"
@@ -25,11 +27,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css'%}">
         {% block css %}{% endblock %}
-        {% if title %}
-            <title>Django Blog - {{ title }}</title>
-        {% else %}
-            <title>Django Blog</title>
-        {% endif %}
+            <title>Corona Rangers</title>
     </head>
     <body>
         <style>
@@ -38,18 +36,21 @@
     padding: 5px;
     border-radius: 30px;
 }
+#google_translate_element img {
+    display: none;
+}
         </style>
         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
                 <div class="container">
-        <div align="padding-left" id="google_translate_element"></div>
+       
+        <a href="#"><img style="width: 200px" src="../../../media/sitelogo.png"></a>
 
-                <a class="navbar-brand mx-4" href="{% url 'main-home'%}">Corona Rangers</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav mr-auto">
+                    <div class="ml-4 navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'blog-home'%}">Donate</a>
                     <a class="nav-item nav-link" href="{% url 'contact'%}">Contact</a>
                     </div>
@@ -67,6 +68,8 @@
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                         <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                     {% endif %}
+                    <div align="padding-left" id="google_translate_element"></div>
+
                     </div>
                 </div>
                 </div>

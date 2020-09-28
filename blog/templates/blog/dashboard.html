@@ -15,7 +15,7 @@
 <div class="row d-flex justify-content-center">
 <div class="col-9">
 <h1 class='my-4' style="text-align: center;">My Dashboard</h1>
-
+    <legend class="border-bottom mb-4">NGOs you have donated</legend>
     <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -40,8 +40,33 @@
       </table>
     </div>
 
+    <legend class="border-bottom mb-4">Donations you have recieved</legend>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Receiver</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date</th>
+            <th scope="col">Sender</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for donation in recieved %}
+          <tr>
+            <th scope="row">{{ donation.receiver }}</th>
+            <td>{{ donation.category }}</td>
+            <td>{{ donation.date|date:"F d, Y" }}</td>
+            <td>{{ donation.donor }}</td>
+            <td>{{ donation.quantity }}</td>
+          </tr>
+        {% endfor %}  
+        </tbody>
+      </table>
+    </div>
+
     <div class="col-3">
         <img style="width: 20vw; height: 60vh; padding-top: 15vh;" src="../../../media/donate.png"/>
     </div>
 </div>
-{% endblock content%} 
+{% endblock content%}

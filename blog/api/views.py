@@ -19,8 +19,8 @@ class ApiBlogListView(ListAPIView):
 	
 	
 class ApiDonateListView(ListAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostSerializer
+	queryset = Donation.objects.all()
+	serializer_class = DonationSerializer
 	permission_classes = (IsAuthenticated,)
 
 	

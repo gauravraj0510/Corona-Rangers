@@ -5,6 +5,7 @@ from django.views.generic import (ListView, DetailView, CreateView,UpdateView, D
 from .forms import PostForm, Form
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 
 
 
@@ -49,6 +50,7 @@ def PostDetailView(request,pk):
             donation.category= post.category
             donation.save()
             send_mail('Corona Rangers has some great news for you',f' {donation.donor} ({request.user.email}) wants to donate  {qty} { donation.category}',settings.EMAIL_HOST_USER,[f'{post.author.email}'],fail_silently=False)
+            messages.success(request, f'We have notified the NGO, thankyou for the donation')
             return redirect('dashboard')
         else:
             pass
@@ -146,7 +148,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = '/'
+    success_url = '/blogs/'
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:

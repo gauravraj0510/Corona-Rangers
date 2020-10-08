@@ -22,4 +22,4 @@ class PostSerializer(serializers.ModelSerializer):
 class DonationSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Donation
-		fields = [ 'receiver', 'donor',  'quantity', 'category','date_posted']		
+		fields = ['receiver', 'donor',  'quantity', 'category','date']		

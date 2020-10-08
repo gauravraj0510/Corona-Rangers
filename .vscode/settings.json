@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\Gaurav Raj\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "python.pythonPath": "/Users/jashmakhija/.local/share/virtualenvs/simpleblog--IT_Nkl6/bin/activate",
     "files.associations": {
         "MID.C": "cpp"
     }

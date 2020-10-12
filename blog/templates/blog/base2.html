@@ -40,41 +40,63 @@
     display: none;
 }
         </style>
-        <header class="site-header">
+         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-                <div class="container">
-       
-        <a href="#"><img style="width: 200px" src="../../../media/sitelogo.png"></a>
-
-                <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <div class="container">
+      
+                <a style="font-size: 31px;" class="navbar-brand mx-4" href="{% url 'main-home'%}"
+                  ><img style="width: 200px" src="../../../media/sitelogo.png"></a>
+                <button
+                  class=" mx-2 navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarToggle"
+                  aria-controls="navbarToggle"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="{% url 'blog-home'%}">Donate</a>
-                    <a class="nav-item nav-link" href="{% url 'contact'%}">Contact</a>
-                    </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
+                  <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{% url 'blog-home'%}"
+                      >Donate</a
+                    >
+                   
+                    <a class="nav-item nav-link" href="{% url 'contact'%}"
+                      >Contact</a
+                    >
+      
+                 
+                  </div>
+                  <!-- Navbar Right Side -->
+                  <div class="navbar-nav">
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-
-                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                        {% if user.profile.ngo == True %}
-                            <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
-                        {% endif %}
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
+                    <a class="nav-item nav-link" href="{% url 'dashboard' %}"
+                      >Dashboard</a
+                    >
+                    <a class="nav-item nav-link" href="{% url 'profile' %}"
+                      >Profile</a
+                    >
+                    {% if user.profile.ngo == True %}
+                    <a class="nav-item nav-link" href="{% url 'post-create' %}"
+                      >New Post</a
+                    >
+                    {% endif %}
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
                     {% else %}
-                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}"
+                      >Register</a
+                    >
                     {% endif %}
                     <div align="padding-left" id="google_translate_element"></div>
-
-                    </div>
+      
+                  </div>
                 </div>
-                </div>
+              </div>
             </nav>
-        </header>
+          </header>
 
 
         {% block content %}{% endblock %}

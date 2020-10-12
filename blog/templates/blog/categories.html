@@ -10,10 +10,12 @@
     margin-bottom: 20px;
     text-shadow: -3px -3px 6px #00000060;
 }
+#post-list{order: 2;}
+#category-list{order: 1;}
 </style>
 <h1>Categorised Requests</h1>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" id="post-list">
             {% for post in category_posts %}
                 <article class="media content-section">
                 <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
@@ -29,7 +31,7 @@
                 </article>
             {% endfor %}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="category-list">
             <div class="content-section">
                 <h3>Categories Available</h3>
                 <p class='text-muted'>Requirements you can donate to.

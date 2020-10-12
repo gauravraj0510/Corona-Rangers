@@ -96,11 +96,19 @@
         Out of every 10 people <br />
         3 die due to lack of medical facilities!
       </h3>
+      {% if user.is_authenticated %}
       <div class="featured-btn-wrap col-12">
         <a href="/blogs/" class="btn btn-danger"
           ></span>DONATE NOW</a
         >
       </div>
+      {% else %}
+      <div class="featured-btn-wrap col-12">
+        <a href="http://127.0.0.1:8000/login/" class="btn btn-danger"
+          ></span>DONATE NOW</a
+        >
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>

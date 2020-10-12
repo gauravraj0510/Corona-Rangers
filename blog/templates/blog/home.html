@@ -9,16 +9,18 @@
     box-shadow: -7px -7px 14px #00000060;
 }
 h1{
-    margin-top: 100px;
     margin-bottom: 20px;
     text-shadow: -3px -3px 6px #00000060;
 }
+#post-list{order: 2;}
+#category-list{order: 1;}
 </style>
-<h1 style="text-align: center;">Donation Requests</h1>
+
 
     <div class="row">
-        
-        <div class="col-md-8">
+
+        <div class="col-md-8" id="post-list">
+            <h1 style="text-align: center;">Donation Requests</h1>
             {% for post in posts %}
                 <article class="media content-section">
                 <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
@@ -30,11 +32,11 @@ h1{
                     </div>
                     <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                     <p class="article-content">{{ post.content }}</p>
-                </div> 
+                </div>
                 </article>
             {% endfor %}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="category-list">
             <div class="content-section">
                 <h3>Product Requirements</h3>
                 <p class='text-muted'>Requirements you can donate to.
@@ -48,5 +50,5 @@ h1{
                 </p>
             </div>
          </div>
-    </div>      
+    </div>
 {% endblock content%}

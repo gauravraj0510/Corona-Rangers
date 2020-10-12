@@ -29,8 +29,7 @@ h1{
             </div>
             <h2 class="article-title">{{ post.title }}</h2>
             <p class="article-content">{{ post.content }}</p>
-        </div>
-        {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
             {% if post.author != user %}
                 <form method="POST">
                     {% csrf_token %}
@@ -43,5 +42,7 @@ h1{
                 </form>
             {% endif %}
         {% endif %}
+        </div>
+        
     </article>
 {% endblock content%}

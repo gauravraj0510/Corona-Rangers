@@ -26,7 +26,7 @@
           </tr>
         </thead>
         <tbody>
-        {% for donation in donations %}
+        {% for donation in donations reversed %}
           <tr>
             <th scope="row">{{ donation.receiver }}</th>
             <td>{{ donation.category }}</td>
@@ -48,7 +48,7 @@
           </tr>
         </thead>
         <tbody>
-        {% for donation in recieved %}
+        {% for donation in recieved reversed %}
           <tr>
             <th scope="row">{{ donation.donor }}</th>
             <td>{{ donation.category }}</td>

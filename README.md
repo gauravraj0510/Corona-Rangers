@@ -1,5 +1,5 @@
 # Corona-Rangers
-During these tough times, Covid is a huge obstacle we all had to face, especially for the needy and for people who don't access to many facilities. Even NGOs are having a difficult time help the needy. You could make a small effort by donating something that could save a person's life. Hence our platform allows NGOs and donors to easily connect help out each other.<br>
+During these tough times, COVID is a huge obstacle we all had to face, especially for the needy and for people who don't access to many facilities. Even NGOs are having a difficult time help the needy. You could make a small effort by donating something that could save a person's life. Hence our platform allows NGOs and donors to easily connect help out each other.<br>
 
 ## Website Link: https://jaar.pythonanywhere.com/
 

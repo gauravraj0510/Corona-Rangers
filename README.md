@@ -21,3 +21,9 @@ During these tough times, COVID is a huge obstacle we all had to face, especiall
 
 ## Functional Contact Page with Chatbot support for users
 <img src='images/7.png'  >
+
+## How to run project
+ - Star and clone this repo
+ - activate your virtualenv
+ - run: `pip install -r requirements.txt` in your shell
+ - run: `python manage.py runserver` in your shell
